@@ -17,9 +17,9 @@ const Routes = () => (
         style: { height: 60 },
         tabStyle: { elevation: 1 },
         labelStyle: { fontSize: 11, marginBottom: 3 },
-        activeBackgroundColor: "#111111",
+        activeBackgroundColor: "#c38f2c",
         inactiveTintColor: "#F9F9F9",
-        activeTintColor: "#c38f2c",
+        activeTintColor: "#F9F9F9",
       }}
     >
       <BottomNavigation.Screen
@@ -34,6 +34,25 @@ const Routes = () => (
 
       <BottomNavigation.Screen
         name="Items"
+        component={Items}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="ios-home" color={color} size={size} />
+          ),
+        }}
+      />
+      <BottomNavigation.Screen
+        name="Sla1"
+        component={Items}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="ios-home" color={color} size={size} />
+          ),
+        }}
+      />
+
+      <BottomNavigation.Screen
+        name="Sla2"
         component={Items}
         options={{
           tabBarIcon: ({ color, size }) => (
