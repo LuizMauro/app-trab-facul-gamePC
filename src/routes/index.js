@@ -1,5 +1,4 @@
 import React from "react";
-import { Image } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
@@ -7,8 +6,6 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 import Champions from "../screens/champions";
 import Items from "../screens/Items";
-
-import IconItems from "../assets/icons/iconItem.png";
 
 const BottomNavigation = createBottomTabNavigator();
 
