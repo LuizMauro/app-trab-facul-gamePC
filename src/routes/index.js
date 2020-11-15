@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Icon from "react-native-vector-icons/Ionicons";
 
-import Champions from "../screens/champions";
+import { ChampionsRouter } from "./ChampionsRouter";
 import Items from "../screens/Items";
 
 const BottomNavigation = createBottomTabNavigator();
@@ -14,7 +14,7 @@ const Routes = () => (
     <BottomNavigation.Navigator
       tabBarOptions={{
         inactiveBackgroundColor: "#111111",
-        style: { height: 60 },
+        style: { height: 60, borderTopColor: "#111111" },
         tabStyle: { elevation: 1 },
         labelStyle: { fontSize: 11, marginBottom: 3 },
         activeBackgroundColor: "#c38f2c",
@@ -24,7 +24,8 @@ const Routes = () => (
     >
       <BottomNavigation.Screen
         name="Home"
-        component={Champions}
+        component={ChampionsRouter}
+        listeners
         options={{
           tabBarIcon: ({ color, size }) => (
             <Icon name="ios-person" color={color} size={size} />
