@@ -24,6 +24,8 @@ export const ButtonChampion = styled.TouchableOpacity`
   width: 80px;
   height: 80px;
   margin: 9px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   border-radius: 6px;
 `;
 

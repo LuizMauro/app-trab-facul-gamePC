@@ -49,7 +49,7 @@ const Champions = () => {
             >
               <ImageChampion
                 source={{
-                  uri: `http://ddragon.leagueoflegends.com/cdn/10.16.1/img/champion/${champ.image.full}`,
+                  uri: `http://ddragon.leagueoflegends.com/cdn/10.23.1/img/champion/${champ.image.full}`,
                 }}
               />
               <NameChampion>{champ.name}</NameChampion>
