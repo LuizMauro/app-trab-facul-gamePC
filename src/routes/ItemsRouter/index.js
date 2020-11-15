@@ -1,18 +1,18 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Champion from "../../screens/champions";
-import ChampionDetails from "../../screens/ChampionsDetails";
+import Items from "../../screens/Items";
+import ItemDetails from "../../screens/ItemDetails";
 const StackNavigation = createStackNavigator();
 
-export const ChampionsRouter = () => {
+export const ItemsRouter = () => {
   return (
     <StackNavigation.Navigator
       screenOptions={{
         headerShown: false,
       }}
     >
-      <StackNavigation.Screen name="Champions" component={Champion} />
+      <StackNavigation.Screen name="Items" component={Items} />
 
       <StackNavigation.Screen
         options={{
@@ -21,8 +21,8 @@ export const ChampionsRouter = () => {
           headerTintColor: "#ffff",
           headerStyle: { backgroundColor: "#000" },
         }}
-        name="Champion-Details"
-        component={ChampionDetails}
+        name="Item-Details"
+        component={ItemDetails}
       />
     </StackNavigation.Navigator>
   );
