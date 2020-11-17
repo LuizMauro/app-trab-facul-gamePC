@@ -39,9 +39,10 @@ export const ImageItem = styled.Image`
 `;
 
 export const Input = styled.TextInput`
-  width: 200px;
-  height:30px;
+  width: 250px;
+  height: 40px;
   background-color: #fff;
+  border-radius: 8px;
 `;
 
 export const TitleText = styled.Text`
@@ -50,11 +51,17 @@ export const TitleText = styled.Text`
 `;
 
 export const SearchDiv = styled.View`
-
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-around;
+  align-items: flex-end;
 `;
 
 export const SearchButton = styled.TouchableOpacity`
-background-color: #c38f2c;
-width:32px;
-height:32px;
+  background-color: #c38f2c;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
 `;

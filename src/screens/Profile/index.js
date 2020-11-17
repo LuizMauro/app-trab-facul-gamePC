@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import { Text, TouchableOpacity } from "react-native";
+import { View, Text } from "react-native";
 
 import apiLoL from "../../services/apiLoL";
 
 import { useNavigation } from "@react-navigation/native";
 
-import { Container, Input, TitleText } from "./styles";
+import { Container, Input, SearchButton, SearchDiv } from "./styles";
+
+import Icon from "react-native-vector-icons/Feather";
 
 const Profile = () => {
   const { navigate } = useNavigation();
-
+  const [summonerID, setSummonerID] = useState();
   const [summoner, setSummoner] = useState();
 
   async function SummonerProfile() {
@@ -17,19 +19,27 @@ const Profile = () => {
       `summoner/v4/summoners/by-name/${summoner}`
     );
     console.log(response.data);
+    setSummonerID(response.data.puuid);
   }
 
   return (
     <Container>
-      <TitleText>Nome de invocador</TitleText>
+      <SearchDiv>
+        <View>
+          <Text style={{ color: "#fff" }}>Nome de invocador</Text>
+          <Input
+            onChangeText={(e) => {
+              setSummoner(e);
+            }}
+          />
+        </View>
 
-      <Input
-        onChangeText={(e) => {setSummoner(e)}}
-      />
+        <SearchButton onPress={SummonerProfile}>
+          <Icon name="search" color="#fff" size={20} />
+        </SearchButton>
+      </SearchDiv>
 
-      
-      <TouchableOpacity onPress={SummonerProfile}> <Text> Search </Text>  </TouchableOpacity>
-      
+      <Clipboard></Clipboard>
     </Container>
   );
 };
