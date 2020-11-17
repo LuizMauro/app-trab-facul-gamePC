@@ -8,9 +8,11 @@ import Icon from "react-native-vector-icons/Ionicons";
 import { ChampionsRouter } from "./ChampionsRouter";
 import { ItemsRouter } from "./ItemsRouter";
 import Items from "../screens/Items";
+import Profile from "../screens/Profile";
 
 import IconChampion from "../assets/icons/champion.png";
 import IconItem from "../assets/icons/iconItem.png";
+import IconUser from "../assets/icons/user.png";
 
 const BottomNavigation = createBottomTabNavigator();
 
@@ -47,17 +49,17 @@ const Routes = () => (
           ),
         }}
       />
-      {/* <BottomNavigation.Screen
-        name="Sla1"
-        component={Items}
+
+      <BottomNavigation.Screen
+        name="Profile"
+        component={Profile}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="ios-home" color={color} size={size} />
+          tabBarIcon: () => (
+            <Image source={IconUser} style={{ width: 32, height: 32 }} />
           ),
         }}
       />
-
-      <BottomNavigation.Screen
+      {/*   <BottomNavigation.Screen
         name="Sla2"
         component={Items}
         options={{
@@ -65,7 +67,8 @@ const Routes = () => (
             <Icon name="ios-home" color={color} size={size} />
           ),
         }}
-      /> */}
+      /> 
+      */}
     </BottomNavigation.Navigator>
   </NavigationContainer>
 );

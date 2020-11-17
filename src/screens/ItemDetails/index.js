@@ -8,6 +8,7 @@ import { Container, ViewHeader } from "./styles";
 const ItemDetails = () => {
   const [loading, setLoading] = useState(true);
   const [selectedItem, setSelectedItem] = useState({});
+  const [selectedDescription, setSelectedDescription] = useState({});
   const [nameItem, setNameItem] = useState("");
   const routes = useRoute();
   const params = routes.params;
@@ -19,7 +20,7 @@ const ItemDetails = () => {
   async function setItem(item) {
     console.log(item);
     setNameItem(item.name);
-    // setSelectedLore(objJson[0].lore);
+  //   setSelectedDescription(objJson[0].);
     // setAttack(objJson[0].info.attack);
     // setDefense(objJson[0].info.defense);
     // setMagic(objJson[0].info.magic);
@@ -73,7 +74,14 @@ const ItemDetails = () => {
               fontWeight: "bold",
             }}
           >
-            {selectedItem.plaintext}
+                  
+          Preço de compra: {selectedItem.gold.base}         
+          {"\n"}
+          Preço de venda: {selectedItem.gold.sell}
+          {"\n"}  
+          Preço de Total: {selectedItem.gold.total}
+          {"\n"}
+          Descrição: {selectedItem.plaintext? selectedItem.plaintext : "Não há descrição para esse item" } 
           </Text>
         </Container>
 
