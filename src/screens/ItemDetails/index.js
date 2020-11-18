@@ -1,30 +1,28 @@
 import React, { useState, useEffect } from "react";
-import { Text, ScrollView, Image, ActivityIndicator } from "react-native";
+import { Text, ScrollView, Image, ActivityIndicator, View } from "react-native";
 import { useRoute } from "@react-navigation/native";
 // import api from "../../services/api";
+import { useNavigation } from "@react-navigation/native";
 
-import { Container, ViewHeader } from "./styles";
+import { Container, ViewTree, ImageItem, ButtonItem } from "./styles";
 
 const ItemDetails = () => {
+  const { navigate } = useNavigation();
   const [loading, setLoading] = useState(true);
   const [selectedItem, setSelectedItem] = useState({});
-  const [selectedDescription, setSelectedDescription] = useState({});
+  const [itensInto, setItensInto] = useState([]);
   const [nameItem, setNameItem] = useState("");
   const routes = useRoute();
   const params = routes.params;
 
   useEffect(() => {
     selectItem(params.item);
+    console.log(params.item);
   }, [params]);
 
-  async function setItem(item) {
-    console.log(item);
+  function setItem(item) {
     setNameItem(item.name);
-  //   setSelectedDescription(objJson[0].);
-    // setAttack(objJson[0].info.attack);
-    // setDefense(objJson[0].info.defense);
-    // setMagic(objJson[0].info.magic);
-    // setDifficulty(objJson[0].info.difficulty);
+    setItensInto(item.into);
     setLoading(false);
   }
 
@@ -74,29 +72,30 @@ const ItemDetails = () => {
               fontWeight: "bold",
             }}
           >
-                  
-          Preço de compra: {selectedItem.gold.base}         
-          {"\n"}
-          Preço de venda: {selectedItem.gold.sell}
-          {"\n"}  
-          Preço de Total: {selectedItem.gold.total}
-          {"\n"}
-          Descrição: {selectedItem.plaintext? selectedItem.plaintext : "Não há descrição para esse item" } 
+            Preço de compra: {selectedItem.gold.base}
+            {"\n"}
+            Preço de venda: {selectedItem.gold.sell}
+            {"\n"}
+            Preço de Total: {selectedItem.gold.total}
+            {"\n"}
+            Descrição:{" "}
+            {selectedItem.plaintext
+              ? selectedItem.plaintext
+              : " Não há descrição para esse item"}
           </Text>
-        </Container>
 
-        {/* <Container>
-          <Text
-            style={{
-              color: "#fff",
-              fontSize: 16,
-              padding: 20,
-              textAlign: "justify",
-            }}
-          >
-            {selectedLore}
-          </Text>
-        </Container> */}
+          <ViewTree>
+            {itensInto &&
+              itensInto.map((item, index) => (
+                <ImageItem
+                  key={item}
+                  source={{
+                    uri: `http://ddragon.leagueoflegends.com/cdn/10.23.1/img/item/${item}.png`,
+                  }}
+                />
+              ))}
+          </ViewTree>
+        </Container>
       </ScrollView>
     </>
   );
