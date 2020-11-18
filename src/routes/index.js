@@ -7,10 +7,12 @@ import {} from "@react-native-community/clipboard";
 import { ChampionsRouter } from "./ChampionsRouter";
 import { ItemsRouter } from "./ItemsRouter";
 import Profile from "../screens/Profile";
+import Mastery from "../screens/Mastery";
 
 import IconChampion from "../assets/icons/champion.png";
 import IconItem from "../assets/icons/iconItem.png";
 import IconUser from "../assets/icons/user.png";
+import IconMastery from "../assets/icons/trofeu.png";
 
 const BottomNavigation = createBottomTabNavigator();
 
@@ -44,6 +46,16 @@ const Routes = () => (
         options={{
           tabBarIcon: () => (
             <Image source={IconItem} style={{ width: 32, height: 32 }} />
+          ),
+        }}
+      />
+
+      <BottomNavigation.Screen
+        name="Mastery"
+        component={Mastery}
+        options={{
+          tabBarIcon: () => (
+            <Image source={IconMastery} style={{ width: 32, height: 32 }} />
           ),
         }}
       />
