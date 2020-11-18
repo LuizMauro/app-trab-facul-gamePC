@@ -2,12 +2,10 @@ import React from "react";
 import { Image } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
-import Icon from "react-native-vector-icons/Ionicons";
+import {} from "@react-native-community/clipboard";
 
 import { ChampionsRouter } from "./ChampionsRouter";
 import { ItemsRouter } from "./ItemsRouter";
-import Items from "../screens/Items";
 import Profile from "../screens/Profile";
 
 import IconChampion from "../assets/icons/champion.png";

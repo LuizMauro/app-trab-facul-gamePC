@@ -24,6 +24,7 @@ const ChampionsDetails = () => {
   }, [params]);
 
   async function LoadLore(champion) {
+    console.log(champion.id);
     const response = await api.get(`/champion/${champion.id}.json`);
     const objJson = Object.values(response.data.data);
 

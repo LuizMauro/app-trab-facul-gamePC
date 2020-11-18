@@ -9,33 +9,25 @@ export const Container = styled.View`
   align-items: center;
 `;
 
-export const ContainerLoading = styled.View`
+export const ContainerInput = styled.View`
   display: flex;
-  flex: 1;
-  flex-direction: row;
+  height: 100px;
   background-color: #000;
+  padding-bottom: 50px;
   justify-content: center;
   align-items: center;
 `;
 
-export const ButtonItem = styled.TouchableOpacity`
-  width: 80px;
-  height: 80px;
-  margin: 9px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  border-radius: 6px;
-`;
-
-export const NameItem = styled.Text`
-  font-size: 10px;
+export const NameProfile = styled.Text`
+  font-size: 25px;
   color: #fff;
   text-align: center;
 `;
 
-export const ImageItem = styled.Image`
-  height: 100%;
-  width: 100%;
+export const LevelProfile = styled.Text`
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
 `;
 
 export const Input = styled.TextInput`
@@ -45,11 +37,6 @@ export const Input = styled.TextInput`
   border-radius: 8px;
 `;
 
-export const TitleText = styled.Text`
-  font-size: 22px;
-  color: #fff;
-`;
-
 export const SearchDiv = styled.View`
   flex-direction: row;
   width: 80%;
@@ -57,7 +44,7 @@ export const SearchDiv = styled.View`
   align-items: flex-end;
 `;
 
-export const SearchButton = styled.TouchableOpacity`
+export const Button = styled.TouchableOpacity`
   background-color: #c38f2c;
   width: 40px;
   height: 40px;
